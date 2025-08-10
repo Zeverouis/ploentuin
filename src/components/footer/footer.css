@@ -1,0 +1,19 @@
+.footer {
+    background-color: #1B1B1B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 84px;
+    width: 100%;
+}
+
+.footer-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.footer-link:hover {
+    color: #78BB93;
+    cursor: pointer;
+}
