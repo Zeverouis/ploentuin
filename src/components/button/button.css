@@ -34,5 +34,18 @@
     box-shadow: none;
     max-height: 440px;
     max-width: 240px;
-    background-color: image
+}
+
+.button-quaternary {
+    box-shadow: none;
+    max-height: 140px;
+    max-width: 200px;
+}
+
+.button-background-image {
+    background-image: var(--background-image-url, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000;
 }
