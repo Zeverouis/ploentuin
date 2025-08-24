@@ -1,6 +1,6 @@
 import './header.css'
-import Button from './button';
 import {useState} from "react";
+import Button from "../button/button.jsx";
 
 function Header ({websiteName,
                      logoUrl,
@@ -60,9 +60,14 @@ function Header ({websiteName,
                     {actionButton3}
                 </div>
             </header>
+
+            {navbarToggle && navbarOpen && (
+                <div className="navbar">
+                    {navbarContent}
+                </div>
+            )}
         </div>
-
-    )
-
-
+    );
 }
+
+export default Header;
