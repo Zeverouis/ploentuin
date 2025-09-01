@@ -36,7 +36,7 @@
     transform: translateY(-50%);
 }
 
-/*This is sketch af, check later*/
+{/* TODO: sketch af, check later */}
 
 .header-bottom {
     display: flex;
@@ -48,7 +48,7 @@
     max-height: 80px;
 }
 
-/*navbar css, come back to this later*/
+   {/* TODO: navbar css, come back to it later */}
 
 .navbar {
     position: absolute;

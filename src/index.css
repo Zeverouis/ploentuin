@@ -16,9 +16,7 @@ body {
   flex-direction: column;
 }
 
-/*ADD GLOBAL COLOURS FOR TEXT*/
-
-/*Everything cept :root needs to go I think*/
+{/* TODO: Add global colors for text and look everything but root in this as well it might need to go*/}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
