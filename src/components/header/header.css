@@ -45,3 +45,16 @@
     padding-right: 260px;
     gap: 130px;
 }
+
+/*navbar css, come back to this later*/
+
+.navbar li {
+    list-style: none;
+    color: #D1FFD9;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.navbar li:hover {
+    color: #FFFFFF;
+}
