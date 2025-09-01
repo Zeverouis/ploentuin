@@ -53,11 +53,11 @@ function Header ({websiteName,
                             onClick={toggleNavbar}
                             />
                     )}
-                </div>
-                <div className="action-buttons">
-                    {actionButton1}
-                    {actionButton2}
-                    {actionButton3}
+                    <div className="action-buttons">
+                        {actionButton1}
+                        {actionButton2}
+                        {actionButton3}
+                    </div>
                 </div>
             </header>
 

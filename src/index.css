@@ -16,6 +16,8 @@ body {
   flex-direction: column;
 }
 
+/*ADD GLOBAL COLOURS FOR TEXT*/
+
 /*Everything cept :root needs to go I think*/
 
 :root {

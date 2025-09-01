@@ -1,0 +1,47 @@
+.header-wrapper {
+    background-color: #1B1B1B;
+    display: flex;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    max-height: 242px;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-title-name {
+    font-size: 4rem;
+}
+
+.header-loginStatus {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*This is sketch af, check later*/
+
+.header-bottom {
+    display: flex;
+    flex-direction: row;
+    padding-left: 60px;
+    justify-content: flex-start;
+    padding-right: 260px;
+    gap: 130px;
+}
