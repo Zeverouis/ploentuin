@@ -35,6 +35,7 @@ function Header ({websiteName,
         <div className="header-wrapper">
             <header className="header">
                 <div className="header-top">
+                    <div className="header-top-spacer"></div>
                     <div className="header-title">
                         {logoUrl && <img src={logoUrl} alt="logo" className="header-title-logo"/>}
                         <span className="header-title-name">{websiteName}</span>
@@ -43,6 +44,8 @@ function Header ({websiteName,
                         {<Button {...loginStatusButton} />}
                     </div>
                 </div>
+
+                <div className="header-spacer"></div>
 
                 <div className="header-bottom">
                     {navbarToggle && navbarIconUrl && (

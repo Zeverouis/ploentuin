@@ -1,14 +1,21 @@
 .button {
+    /*display: inline-flex;*/
+    display: flex;
     border: #000 solid 1px;
     border-radius: 40px;
-    max-width: 220px;
-    max-height: 72px;
+    width: 240px;
+    height: 100px;
     background-color: #000;
     color: #78BB93;
     cursor: pointer;
-    font-size: 40px;
+    /*font-size: 40px;*/
+    font-size: clamp(1rem, 3vw, 2.5rem);
     text-align: center;
     text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 220px;
+    min-width: 60px;
 }
 
 .button:hover {
@@ -24,6 +31,8 @@
 
 .button-primary {
     box-shadow: 0 0 8px 5px rgba(211, 157, 97, 0.6);
+    width: 220px;
+    height: 72px;
 }
 
 .button-secondary {
