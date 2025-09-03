@@ -3,8 +3,8 @@ import './footer.css';
 
 const Footer = () => {
     return (
-        <footer>
-            <Link to= "/faq" classname= "footer-link">FAQ</Link>
+        <footer className="footer">
+            <Link to= "/faq" className= "footer-link">FAQ</Link>
         </footer>
     )
 }

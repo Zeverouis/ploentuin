@@ -30,6 +30,8 @@ function Home() {
                 {/* other page content */}
             </main>
 
+            <Footer />
+
         </>
 
     )
