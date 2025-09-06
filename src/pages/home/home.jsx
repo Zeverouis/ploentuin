@@ -6,8 +6,10 @@ import Button from '../../components/Button/button.jsx';
 function Home() {
     return (
         <>
+
+            {/*TODO:Change logourl menu.svg etc to the right ones*/}
             <Header
-                websiteName="My Website"
+                websiteName="Ploentuin"
                 logoUrl="/logo.svg"
                 loggedIn={false}
                 setLoggedIn={() => {}}
@@ -20,9 +22,9 @@ function Home() {
                         <li>Contact</li>
                     </ul>
                 }
-                actionButton1={<Button label ="Start" to="/home" variant="primary"/>}
-                actionButton2={<Button label ="Start" to="/home" variant="primary"/>}
-                actionButton3={<Button label ="Start" to="/home" variant="primary"/>}
+                actionButton1={<Button label ="Forum" to="/forum-home" variant="primary"/>}
+                actionButton2={<Button label ="Database" to="/database" variant="primary"/>}
+                actionButton3={<Button label ="Planner" to="/planner" variant="primary"/>}
             />
 
             <main className="main-content">

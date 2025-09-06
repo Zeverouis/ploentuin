@@ -56,14 +56,14 @@
     flex-direction: row;
     padding-left: 60px;
     justify-content: flex-start;
-    gap: clamp(10px, 10vw, 130px);
+    gap: clamp(10px, 5vw, 130px);
     max-height: 100px;
 }
 
 .action-buttons {
     display: flex;
     flex-direction: row;
-    gap: clamp(10px, 5vw, 130px);
+    gap: clamp(10px, 9vw, 130px);
     overflow: hidden;
     padding: 2rem;
     align-items: center;
