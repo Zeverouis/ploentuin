@@ -7,12 +7,13 @@ function Home() {
     return (
         <>
 
-            {/*TODO:Change logourl menu.svg etc to the right ones*/}
+            {/*TODO:Change logourl menu.svg etc to the right ones. also add right links*/}
             <Header
                 websiteName="Ploentuin"
                 logoUrl="/logo.svg"
                 loggedIn={false}
-                setLoggedIn={() => {}}
+                setLoggedIn={() => {
+                }}
                 navbarToggle={true}
                 navbarIconUrl="/menu.svg"
                 navbarContent={
@@ -22,17 +23,40 @@ function Home() {
                         <li>Contact</li>
                     </ul>
                 }
-                actionButton1={<Button label ="Forum" to="/forum-home" variant="primary"/>}
-                actionButton2={<Button label ="Database" to="/database" variant="primary"/>}
-                actionButton3={<Button label ="Planner" to="/planner" variant="primary"/>}
+                actionButton1={<Button label="Forum" to="/forum-home" variant="primary"/>}
+                actionButton2={<Button label="Database" to="/database" variant="primary"/>}
+                actionButton3={<Button label="Planner" to="/planner" variant="primary"/>}
             />
 
             <main className="main-content">
-                <h1>Welcome to the Homepage</h1>
-                {/* other page content */}
+                <div className="main-layout">
+
+                    <div className="content-column">
+                        <div className="home-text">
+                            <h2>De one-stop voor je online (moes)tuin.</h2>
+                            <p>Praat mee op het forum!</p>
+                        </div>
+
+                        <div className="register-button">
+                            <Button label="Registreer" to="/register" variant="secondary-register" />
+                        </div>
+
+                        <div className="screenshot-buttons">
+                            <Button label="Backgroundimage" variant="tertiary" />
+                            <Button label="Backgroundimage" variant="tertiary" />
+                            <Button label="Backgroundimage" variant="tertiary" />
+                        </div>
+                    </div>
+
+                    <div className="bulletin-boards">
+                        <div className="bulletin-board-placeholder1"></div>
+                        <div className="bulletin-board-placeholder2"></div>
+                    </div>
+
+                </div>
             </main>
 
-            <Footer />
+            <Footer/>
 
         </>
 
