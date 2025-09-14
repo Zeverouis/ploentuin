@@ -2,6 +2,7 @@ import './home.css'
 import Footer from "../../components/Footer/footer.jsx";
 import Header from '../../components/Header/header.jsx';
 import Button from '../../components/Button/button.jsx';
+import BulletinBoard from "../../components/bulletinBoard/bulletinBoard.jsx";
 
 function Home() {
     return (
@@ -49,8 +50,12 @@ function Home() {
                     </div>
 
                     <div className="bulletin-boards">
-                        <div className="bulletin-board-placeholder1"></div>
-                        <div className="bulletin-board-placeholder2"></div>
+                        <BulletinBoard
+                            title="Latest Forums"
+                            fetchUrl="api/forum-posts" />
+                        <BulletinBoard
+                            title="Latest Data"
+                            fetchUrl="api/data-entries" />
                     </div>
 
                 </div>
