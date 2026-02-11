@@ -1,5 +1,4 @@
 import './header.css'
-import {useState} from "react";
 import Button from "../button/button.jsx";
 
 function Header ({websiteName,
@@ -8,13 +7,10 @@ function Header ({websiteName,
                      setLoggedIn,
                      navbarToggle = false,
                      navbarIconUrl,
-                     navbarContent = null,
+                     onToggleNavbar,
                      actionButton1,
                      actionButton2,
                      actionButton3}) {
-
-    const [navbarOpen, setNavbarOpen] = useState(false);
-    const toggleNavbar = () => setNavbarOpen(prev => !prev);
 
     let loginStatusButton;
     if (loggedIn) {
@@ -53,7 +49,7 @@ function Header ({websiteName,
                             src={navbarIconUrl}
                             alt="Toggle menu"
                             className="navbar-icon"
-                            onClick={toggleNavbar}
+                            onClick={onToggleNavbar}
                             />
                     )}
                     <div className="action-buttons">
@@ -63,12 +59,6 @@ function Header ({websiteName,
                     </div>
                 </div>
             </header>
-
-            {navbarToggle && navbarOpen && (
-                <div className="navbar">
-                    {navbarContent}
-                </div>
-            )}
         </div>
     );
 }

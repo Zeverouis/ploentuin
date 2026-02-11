@@ -3,15 +3,15 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import './bulletinBoard.css'
 
-function BulletinBoard({title, fetchUrl}) {
+function BulletinBoard({title, fetchUrl, linkPrefix}) {
     const [entries, setEntries] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(fetchUrl);
-                const data = response.data;
+                const response = await axios.get(`http://localhost:8080${fetchUrl}`);
+                const data = response.data.data || [];
 
                 const latestEntries = data
                     .sort((a, b) => b.id - a.id)
@@ -38,7 +38,7 @@ return (
             <ul className="bulletin-links">
                 {entries.map(entry => (
                     <li key={entry.id}>
-                        <Link to={entry.link}>
+                        <Link to={`${linkPrefix}/${entry.id}`}>
                             {entry.title}
                         </Link>
                     </li>

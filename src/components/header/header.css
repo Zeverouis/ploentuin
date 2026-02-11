@@ -70,29 +70,3 @@
     align-items: center;
     flex-shrink: 1;
 }
-
-   {/* TODO: navbar css, come back to it later */}
-
-.navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    max-width: 262px;
-    width: 100%;
-    max-height: 698px;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    background-color: #000;
-    height: calc(100vh - 133px);
-}
-
-.navbar li {
-    list-style: none;
-    color: #D1FFD9;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.navbar li:hover {
-    color: #FFFFFF;
-}
