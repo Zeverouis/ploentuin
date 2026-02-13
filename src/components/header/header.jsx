@@ -1,5 +1,6 @@
 import './header.css'
 import Button from "../button/button.jsx";
+import {useLocation} from "react-router-dom";
 
 function Header ({websiteName,
                      logoUrl,
@@ -7,10 +8,10 @@ function Header ({websiteName,
                      setLoggedIn,
                      navbarToggle = false,
                      navbarIconUrl,
-                     onToggleNavbar,
-                     actionButton1,
-                     actionButton2,
-                     actionButton3}) {
+                     onToggleNavbar
+                     }) {
+    const location = useLocation();
+    const path = location.pathname;
 
     let loginStatusButton;
     if (loggedIn) {
@@ -26,6 +27,47 @@ function Header ({websiteName,
             variant: "secondary"
         };
     }
+
+    const renderDynamicButtons = () => {
+        if (path.startsWith('/planner')) {
+            return (
+                <>
+                    <Button label="Home" to="/" />
+                    <Button label="Database" to="/database" />
+                    <Button label="Forum" to="/forum" />
+                </>
+            );
+        }
+
+        if (path.startsWith('/database')) {
+            return (
+                <>
+                    <Button label="Home" to="/" />
+                    <Button label="Forum" to="/forum" />
+                    <Button label="Planner" to="/planner" />
+                </>
+            );
+        }
+
+        if (path.startsWith('/forum')) {
+            return (
+                <>
+                    <Button label="Home" to="/" />
+                    <Button label="Database" to="/database" />
+                    <Button label="Planner" to="/planner" />
+                </>
+            );
+        }
+
+        else
+            return (
+                <>
+                    <Button label="Forum" to="/forum" />
+                    <Button label="Database" to="/database" />
+                    <Button label="Planner" to="/planner" />
+                </>
+            );
+    };
 
     return (
         <div className="header-wrapper">
@@ -53,9 +95,7 @@ function Header ({websiteName,
                             />
                     )}
                     <div className="action-buttons">
-                        {actionButton1}
-                        {actionButton2}
-                        {actionButton3}
+                        {renderDynamicButtons()}
                     </div>
                 </div>
             </header>

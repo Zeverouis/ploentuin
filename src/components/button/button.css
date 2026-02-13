@@ -47,7 +47,7 @@
 
 .button-tertiary {
     box-shadow: none;
-    height: clamp(1rem, 22vw, 440px);
+    height: clamp(1rem, 25vw, 440px);
     width: clamp(1rem, 13vw, 240px);
     flex: 0 0 auto;
 }

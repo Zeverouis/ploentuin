@@ -18,7 +18,6 @@ function BulletinBoard({title, fetchUrl, linkPrefix}) {
                     .slice(0, 5);
 
                 setEntries(latestEntries);
-                //     TODO: Change the error message to something we'd actually use
             } catch (error) {
                 console.error("Woopsiedoopsie no bulletinboard for u!", error);
             } finally {

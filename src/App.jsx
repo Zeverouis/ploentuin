@@ -1,35 +1,33 @@
 import './App.css'
-import React from 'react'
-import {Routes, Route} from 'react-router-dom';
+import React, { useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/home.jsx';
+import Layout from "./components/layout/layout.jsx";
 
-
+//TODO: ADD OTHER ROutES FOR DATABASE FORUM PLANNER
 
 function App() {
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [navbarOpen, setNavbarOpen] = useState(false);
 
-  return (
-    <>
+    return (
         <Routes>
-            <Route path="/" element={<Home/>}/>
-            {/*<Route path="/database" element={<Database/>}/>*/}
-            {/*<Route path="/database-category" element={<DatabaseCategory/>}/>*/}
-            {/*<Route path="/database-topic" element={<DatabaseTopic/>}/>*/}
-            {/*<Route path="/faq" element={<Faq/>}/>*/}
-            {/*<Route path="/forum-category" element={<ForumCategory/>}/>*/}
-            {/*<Route path="/forum-home" element={<ForumHome/>}/>*/}
-            {/*<Route path="/forum-topic" element={<ForumTopic/>}/>*/}
-            {/*<Route path="/login" element={<Login/>}/>*/}
-            {/*<Route path="/planner" element={<Planner/>}/>*/}
-            {/*<Route path="/profile" element={<Profile/>}/>*/}
-            {/*<Route path="/register" element={<Register/>}/>*/}
-        {/* maybe change these later? Want the profile to be username, topics to be the
-        name of the topics/*/}
+            <Route element={
+                <Layout
+                    loggedIn={loggedIn}
+                    setLoggedIn={setLoggedIn}
+                    navbarOpen={navbarOpen}
+                    setNavbarOpen={setNavbarOpen}
+                />
+            }>
+                <Route path="/" element={<Home />} />
+                //TODO: ADD THE OTHER PAGES OFC
+                <Route path="/database" element={<div>Database Page</div>} />
+                <Route path="/forum" element={<div>Forum Page</div>} />
+                <Route path="/planner" element={<div>Planner Page</div>} />
+            </Route>
         </Routes>
-      <div>
-
-      </div>
-    </>
-  )
+    )
 }
 
 export default App

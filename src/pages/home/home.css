@@ -36,8 +36,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     flex: 1;
+    min-width: 600px;
 }
 
 .screenshot-buttons {
@@ -45,7 +46,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: clamp(20px, 5vw, 120px);
+    width: 100%;
 }
 
 .bulletin-boards {
