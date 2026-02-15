@@ -16,8 +16,11 @@ function Header ({websiteName,
     let loginStatusButton;
     if (loggedIn) {
         loginStatusButton = {
-            label: "Logout",
-            onClick: setLoggedIn(false),
+            label: "Logout", //TODO: CHANGE THIS TO PROFILE LATER, CHANGE IT ALL TO REDIRECT TO PROFILE!
+            onClick: () => {
+                localStorage.removeItem('token');
+                setLoggedIn(false);
+            },
             variant: "secondary"
         };
     } else {
