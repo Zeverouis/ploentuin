@@ -6,6 +6,8 @@ import Layout from "./components/layout/layout.jsx";
 import Register from "./pages/register/register.jsx";
 import {ToastContainer} from 'react-toastify';
 import Login from "./pages/login/login.jsx";
+import Database from "./pages/database/database.jsx";
+import DatabaseCategory from "./pages/database-category/database-category.jsx";
 
 //TODO: ADD OTHER ROutES FOR DATABASE FORUM PLANNER
 
@@ -62,7 +64,8 @@ function App() {
                 //TODO: ADD THE OTHER PAGES OFC
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login setLoggedIn={setLoggedIn}/>} />
-                <Route path="/database" element={<div>Database Page</div>} />
+                <Route path="/database" element={<Database />} />
+                <Route path="/database/category/:id" element={<DatabaseCategory />} />
                 <Route path="/forum" element={<div>Forum Page</div>} />
                 <Route path="/planner" element={<div>Planner Page</div>} />
             </Route>

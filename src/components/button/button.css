@@ -28,7 +28,8 @@
 }
 
 .button-primary {
-    box-shadow: 0 0 8px 5px rgba(211, 157, 97, 0.6);
+    box-shadow: 0 0 10px #D39D61, 0 0 5px #D39D61;
+    border: 1px solid #D39D61;
     width: 220px;
     height: 72px;
 }

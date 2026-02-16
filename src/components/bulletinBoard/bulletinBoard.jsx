@@ -3,7 +3,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import './bulletinBoard.css'
 
-function BulletinBoard({title, fetchUrl, linkPrefix}) {
+function BulletinBoard({title, fetchUrl, linkPrefix, className}) {
     const [entries, setEntries] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -29,7 +29,7 @@ function BulletinBoard({title, fetchUrl, linkPrefix}) {
     }, [fetchUrl]);
 
 return (
-    <div className="bulletin-board">
+    <div className={`bulletin-board ${className}`}>
         <h3 className="bulletin-title">{title}</h3>
         {loading ? (
             <p className="loading-text">Loading...</p>
