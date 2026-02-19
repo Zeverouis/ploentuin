@@ -37,6 +37,10 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+.pillar-wrapper {
+    position: relative;
+    display: flex;
+}
 
 .pillars-grid {
     display: flex;
@@ -47,19 +51,14 @@
     width: 100%;
     overflow-y: auto;
     padding-bottom: 50px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .pillars-grid::-webkit-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    display: none;
 }
 
-.pillars-grid::-webkit-scrollbar-thumb {
-    background: #D39D61;
-    border-radius: 10px;
-}
-
-/*ADD BACKGROUND IMAGES IN HERE FOR THE CATEGORIES WITH THE NAMES*/
 .pillar-item {
     background-color: #000000;
     width: 150px;
@@ -69,9 +68,23 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: black;
-    font-weight: bold;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     flex-shrink: 0;
+    z-index: 1;
+}
+
+.pillar-item:hover {
+    color: #D39D61;
 }
 
 .database-widgets-sidebar {
@@ -79,4 +92,40 @@
     flex-direction: column;
     gap: 20px;
     flex-shrink: 0;
+}
+
+.add-category-card {
+    background-color: #000000;
+    background-image: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.add-text {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.add-text:hover {
+    color: #D39D61;
+}
+
+.delete-x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
 }

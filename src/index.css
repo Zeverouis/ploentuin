@@ -19,7 +19,7 @@ body {
 {/* TODO: Add global colors for text and look everything but root in this as well it might need to go*/}
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto Mono", "Roboto", monospace, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

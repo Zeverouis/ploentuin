@@ -2,6 +2,8 @@ import './header.css'
 import Button from "../button/button.jsx";
 import {useLocation} from "react-router-dom";
 
+//TODO: ADD LOGO AND LINES FOR NAVBAR ETC
+
 function Header ({websiteName,
                      logoUrl,
                      loggedIn,

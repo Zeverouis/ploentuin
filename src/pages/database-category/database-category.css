@@ -57,7 +57,8 @@
 }
 
 .category-item-card:hover {
-    background-color: #78BB93;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.4s ease;
     color: #000000;
     box-shadow: 0 0 10px #D39D61;
     border: 1px solid #D39D61;
