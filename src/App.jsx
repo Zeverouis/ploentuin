@@ -73,7 +73,7 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setUserRole={setUserRole}/>} />
                     <Route path="/database" element={<Database userRole={userRole} />} />
-                    <Route path="/database/category/:id" element={<DatabaseCategory />} />
+                    <Route path="/database/category/:id" element={<DatabaseCategory userRole={userRole} />} />
                     <Route path="/database/page/:id" element={<DataDetailPage />} />
                     <Route path="/forum" element={<div>Forum Page</div>} />
                     <Route path="/planner" element={<div>Planner Page</div>} />

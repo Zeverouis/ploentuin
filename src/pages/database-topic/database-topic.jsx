@@ -49,9 +49,16 @@ const DataDetailPage = () => {
                         {page.images.map((img, idx) => (
                             <div key={idx} className="image-card">
                                 <img
-                                    src={img.imageUrl}
+                                    src={
+                                        img.imageUrl?.startsWith('http')
+                                            ? img.imageUrl
+                                            : `http://localhost:8080${img.imageUrl}`
+                                    }
                                     alt={img.caption || "Afbeelding"}
                                     className="entity-image"
+                                    onError={(e) => {
+                                        console.error("Image failed to load:", e.target.src);
+                                    }}
                                 />
                                 {img.caption && (
                                     <p className="image-caption-text">{img.caption}</p>
