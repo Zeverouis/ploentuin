@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 import BulletinBoard from '../../components/BulletinBoard/BulletinBoard';
 import './database.css';
 import { categoryImages } from "../../assets/database/categories/category-images.jsx";
+import AdminModal from "../../components/adminModal/admin-modal.jsx";
 
 function Database({ userRole }) {
     const [categories, setCategories] = useState([]);
+    const [showModal, setShowModal] = useState(false);
+    const [newCatName, setNewCatName] = useState("");
     const isAdmin = userRole === 'ADMIN';
 
     useEffect(() => {
@@ -22,20 +25,17 @@ function Database({ userRole }) {
         }
     }
 
-    const handleAddCategory = async () => {
-        const name = prompt("New category name:");
-        if (!name || name.trim() === "") return;
-
+    const submitCategory = async (e) => {
+        e.preventDefault();
         try {
             await axios.post('http://localhost:8080/info/categories',
-                { categoryName: name },
+                { categoryName: newCatName },
                 { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
             );
+            setNewCatName("");
+            setShowModal(false);
             fetchCategories();
-        } catch (err) {
-            console.error("Add failed", err);
-            alert("Failed to add category. Check console.");
-        }
+        } catch (err) { console.error("Add failed", err); }
     };
 
     const handleDelete = async (id, e) => {
@@ -68,7 +68,10 @@ function Database({ userRole }) {
                 <div className="pillars-grid">
                     {isAdmin && (
                         <div className="pillar-wrapper">
-                            <div className="pillar-item add-category-card" onClick={handleAddCategory}>
+                            <div
+                                className="pillar-item add-category-card"
+                                onClick={() => setShowModal(true)}
+                            >
                                 <span className="add-text">ADD</span>
                             </div>
                         </div>
@@ -103,6 +106,36 @@ function Database({ userRole }) {
                 <BulletinBoard title="New Fruit" fetchUrl="/info/pages/category/9" linkPrefix="/database/page" />
                 <BulletinBoard title="New Tuin Tips" fetchUrl="/info/pages/category/1" linkPrefix="/database/page" />
             </div>
+
+            <AdminModal
+                isOpen={showModal}
+                title="Nieuwe Database Categorie"
+            >
+                <form onSubmit={submitCategory}>
+                    <input
+                        value={newCatName}
+                        onChange={(e) => setNewCatName(e.target.value)}
+                        placeholder="Naam van de categorie..."
+                        required
+                        autoFocus
+                    />
+                    <div className="modal-actions">
+                        <button
+                            type="button"
+                            className="cancel-btn"
+                            onClick={() => {
+                                setShowModal(false);
+                                setNewCatName("");
+                            }}
+                        >
+                            Annuleren
+                        </button>
+                        <button type="submit" className="submit-btn">
+                            Aanmaken
+                        </button>
+                    </div>
+                </form>
+            </AdminModal>
         </div>
     );
 }

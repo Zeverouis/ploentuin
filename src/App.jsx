@@ -9,6 +9,7 @@ import Login from "./pages/login/login.jsx";
 import Database from "./pages/database/database.jsx";
 import DatabaseCategory from "./pages/database-category/database-category.jsx";
 import DataDetailPage from "./pages/database-topic/database-topic.jsx";
+import ForumHome from "./pages/forum-home/forum-home.jsx";
 
 //TODO: ADD ROUTES DON'T FORGET!
 
@@ -75,7 +76,7 @@ function App() {
                     <Route path="/database" element={<Database userRole={userRole} />} />
                     <Route path="/database/category/:id" element={<DatabaseCategory userRole={userRole} />} />
                     <Route path="/database/page/:id" element={<DataDetailPage />} />
-                    <Route path="/forum" element={<div>Forum Page</div>} />
+                    <Route path="/forum" element={<ForumHome userRole={userRole} />} />
                     <Route path="/planner" element={<div>Planner Page</div>} />
                 </Route>
             </Routes>

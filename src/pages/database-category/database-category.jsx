@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import './database-category.css';
+import AdminModal from "../../components/adminModal/admin-modal.jsx";
 
 function DatabaseCategory({ userRole }) {
     const { id } = useParams();
@@ -109,11 +110,10 @@ function DatabaseCategory({ userRole }) {
                 {isAdmin && (
                     <div className="pillar-wrapper">
                         <div className="category-item-card add-page-card" onClick={() => setShowModal(true)}>
-                            <span className="add-text">ADD PAGE</span>
+                            <span className="add-text">ADD</span>
                         </div>
                     </div>
                 )}
-
                 {pages.map(page => (
                     <div key={page.id} className="pillar-wrapper">
                         <Link to={`/database/page/${page.id}`} className="category-item-card">{page.title}</Link>
@@ -122,41 +122,38 @@ function DatabaseCategory({ userRole }) {
                 ))}
             </div>
 
-            {showModal && (
-                <div className="admin-modal-overlay">
-                    <div className="admin-modal-content">
-                        <h2>Nieuwe Pagina</h2>
-                        <form onSubmit={handleSubmit}>
-                            <input name="title" placeholder="Titel (Verplicht)" onChange={handleInputChange} required />
-                            <textarea name="tldr" placeholder="TLDR (Verplicht)" onChange={handleInputChange} required />
+            <AdminModal isOpen={showModal} title="Nieuwe Pagina">
+                <form onSubmit={handleSubmit}>
+                    <input name="title" placeholder="Titel (Verplicht)" value={formData.title} onChange={handleInputChange} required />
+                    <textarea name="tldr" placeholder="TLDR (Verplicht)" value={formData.tldr} onChange={handleInputChange} required />
 
-                            <div className="modal-sections">
-                                {[1, 2, 3, 4].map(num => (
-                                    <div key={num} className="section-input-group">
-                                        <input
-                                            name={`section${num === 1 ? 'One' : num === 2 ? 'Two' : num === 3 ? 'Three' : 'Four'}Title`}
-                                            placeholder={`Sectie ${num} Titel`}
-                                            onChange={handleInputChange}
-                                        />
-                                        <textarea
-                                            name={`section${num === 1 ? 'One' : num === 2 ? 'Two' : num === 3 ? 'Three' : 'Four'}Content`}
-                                            placeholder={`Sectie ${num} Inhoud`}
-                                            onChange={handleInputChange}
-                                        />
-                                    </div>
-                                ))}
+                    <div className="modal-sections">
+                        {[1, 2, 3, 4].map(num => (
+                            <div key={num} className="section-input-group">
+                                <input
+                                    name={`section${num === 1 ? 'One' : num === 2 ? 'Two' : num === 3 ? 'Three' : 'Four'}Title`}
+                                    placeholder={`Sectie ${num} Titel`}
+                                    value={formData[`section${num === 1 ? 'One' : num === 2 ? 'Two' : num === 3 ? 'Three' : 'Four'}Title`]}
+                                    onChange={handleInputChange}
+                                />
+                                <textarea
+                                    name={`section${num === 1 ? 'One' : num === 2 ? 'Two' : num === 3 ? 'Three' : 'Four'}Content`}
+                                    placeholder={`Sectie ${num} Inhoud`}
+                                    value={formData[`section${num === 1 ? 'One' : num === 2 ? 'Two' : num === 3 ? 'Three' : 'Four'}Content`]}
+                                    onChange={handleInputChange}
+                                />
                             </div>
-
-                            <input type="file" multiple onChange={handleFileChange} accept="image/*" />
-
-                            <div className="modal-actions">
-                                <button type="button" className="cancel-btn" onClick={() => setShowModal(false)}>Annuleren</button>
-                                <button type="submit" className="submit-btn">Opslaan</button>
-                            </div>
-                        </form>
+                        ))}
                     </div>
-                </div>
-            )}
+
+                    <input type="file" multiple onChange={handleFileChange} accept="image/*" />
+
+                    <div className="modal-actions">
+                        <button type="button" className="cancel-btn" onClick={() => setShowModal(false)}>Annuleren</button>
+                        <button type="submit" className="submit-btn">Opslaan</button>
+                    </div>
+                </form>
+            </AdminModal>
         </div>
     );
 }
