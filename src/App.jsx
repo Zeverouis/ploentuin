@@ -14,9 +14,6 @@ import ForumTopic from "./pages/forum-topic/forum-topic.jsx";
 import Planner from "./pages/planner/planner.jsx";
 import Profile from "./pages/profile/profile.jsx";
 
-//Adding this to 'fool' github into making sure I can turn this into a pull-request, something
-// went wrong and now it won't update the build-branch to the main so
-
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [navbarOpen, setNavbarOpen] = useState(false);
