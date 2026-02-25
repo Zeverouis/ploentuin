@@ -1,37 +1,20 @@
 import './header.css'
 import Button from "../button/button.jsx";
-import {useLocation} from "react-router-dom";
-
-//TODO: ADD LOGO AND LINES FOR NAVBAR ETC
+import {useLocation, Link} from "react-router-dom";
+import {useState} from "react";
+import { HeaderIcons } from "../../assets/header/header-icons.jsx";
 
 function Header ({websiteName,
-                     logoUrl,
                      loggedIn,
                      setLoggedIn,
+                     currentUsername,
+                     currentUserAvatar,
                      navbarToggle = false,
-                     navbarIconUrl,
                      onToggleNavbar
-                     }) {
+                 }) {
     const location = useLocation();
     const path = location.pathname;
-
-    let loginStatusButton;
-    if (loggedIn) {
-        loginStatusButton = {
-            label: "Logout", //TODO: CHANGE THIS TO PROFILE LATER, CHANGE IT ALL TO REDIRECT TO PROFILE!
-            onClick: () => {
-                localStorage.removeItem('token');
-                setLoggedIn(false);
-            },
-            variant: "secondary"
-        };
-    } else {
-        loginStatusButton = {
-            label: "Login",
-            to: "/login",
-            variant: "secondary"
-        };
-    }
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const renderDynamicButtons = () => {
         if (path.startsWith('/planner')) {
@@ -80,25 +63,50 @@ function Header ({websiteName,
                 <div className="header-top">
                     <div className="header-top-spacer"></div>
                     <div className="header-title">
-                        {logoUrl && <img src={logoUrl} alt="logo" className="header-title-logo"/>}
+                        {<img src={HeaderIcons.ploentuinLogo}
+                              alt="logo"
+                              className="header-title-logo"/>}
                         <span className="header-title-name">{websiteName}</span>
                     </div>
                     <div className="header-loginStatus">
-                        {<Button {...loginStatusButton} />}
+                        {loggedIn ? (
+                            <div className="avatar-container">
+                                <img
+                                    src={currentUserAvatar}
+                                    alt="User Avatar"
+                                    className="header-avatar"
+                                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                                />
+                                {dropdownOpen && (
+                                    <div className="header-dropdown">
+                                        <Link to={`/profile/${currentUsername}`} onClick={() => setDropdownOpen(false)}>Profiel</Link>
+                                        <button onClick={() => {
+                                            localStorage.removeItem('token');
+                                            setLoggedIn(false);
+                                            setDropdownOpen(false);
+                                        }}>Logout</button>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <Button label="Login" to="/login" variant="secondary" />
+                        )}
                     </div>
                 </div>
 
                 <div className="header-spacer"></div>
 
                 <div className="header-bottom">
-                    {navbarToggle && navbarIconUrl && (
-                        <img
-                            src={navbarIconUrl}
-                            alt="Toggle menu"
-                            className="navbar-icon"
-                            onClick={onToggleNavbar}
+                    <div className="navbar-toggle-wrapper">
+                        {navbarToggle && (
+                            <img
+                                src={HeaderIcons.navbarToggle}
+                                alt="Toggle menu"
+                                className="navbar-icon"
+                                onClick={onToggleNavbar}
                             />
-                    )}
+                        )}
+                    </div>
                     <div className="action-buttons">
                         {renderDynamicButtons()}
                     </div>

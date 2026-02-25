@@ -13,7 +13,7 @@
 .navbar {
     width: 262px;
     flex-shrink: 0;
-    background-color: #000;
+    background-color: #000000;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     padding: 2rem;
@@ -21,33 +21,52 @@
     flex-direction: column;
 }
 
-.navbar li {
-    list-style: none;
-    color: #D1FFD9;
-    cursor: pointer;
-    padding: 0.5rem;
+.navbar li:hover {
+    color: #D39D61;
 }
 
-.navbar li:hover {
-    color: #FFFFFF;
+.navbar li, a {
+    font-weight: 600;
+    color: #78BB93;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 1rem;
+    list-style: none;
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    color: #D39D61;
+}
+
+.nav-sub-list {
+    list-style: none;
+}
+
+.nav-group-label {
+    display: block;
+    color: #78BB93;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-group a {
+    display: block;
+    padding: 0.5rem;
+    color: #78BB93;
+    text-decoration: none;
 }
 
 .content-column {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
     flex: 1;
     min-width: 600px;
-}
-
-.screenshot-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(20px, 5vw, 120px);
-    width: 100%;
 }
 
 .bulletin-boards {
@@ -55,16 +74,4 @@
     flex-direction: column;
     gap: 5.6rem;
     flex-shrink: 0;
-}
-
-.bulletin-board-placeholder1,
-.bulletin-board-placeholder2 {
-    display: flex;
-    background-color: black;
-    height: 240px;
-    width: 220px;
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-    flex-shrink: 1;
-    flex-grow: 1;
 }

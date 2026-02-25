@@ -4,7 +4,7 @@ import './footer.css';
 const Footer = () => {
     return (
         <footer className="footer">
-            <Link to= "/faq" className= "footer-link">FAQ</Link>
+            <p className= "footer-text">© 2025-2026 Tomato Industries | All rights reserved</p>
         </footer>
     )
 }

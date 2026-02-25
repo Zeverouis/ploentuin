@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './forum-home.css';
 import AdminModal from "../../components/adminModal/admin-modal.jsx";
+import BulletinBoard from "../../components/bulletinBoard/bulletinBoard.jsx";
 
 function ForumHome({ userRole }) {
     const [categories, setCategories] = useState([]);
@@ -19,14 +20,16 @@ function ForumHome({ userRole }) {
         }
     };
 
-    useEffect(() => { fetchCategories(); }, []);
+    useEffect(() => {
+        fetchCategories();
+    }, []);
 
     const handleAddCategory = async (e) => {
         e.preventDefault();
         try {
             await axios.post('http://localhost:8080/forums/categories',
-                { categoryName: newCategoryName },
-                { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
+                {categoryName: newCategoryName},
+                {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}
             );
             setNewCategoryName("");
             setShowModal(false);
@@ -41,32 +44,46 @@ function ForumHome({ userRole }) {
         if (!window.confirm("Alle posts in deze categorie worden ook verwijderd. Doorgaan?")) return;
         try {
             await axios.delete(`http://localhost:8080/forums/categories/${id}`, {
-                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+                headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             });
             fetchCategories();
-        } catch (err) { console.error("Delete failed:", err); }
+        } catch (err) {
+            console.error("Delete failed:", err);
+        }
     };
 
     return (
         <div className="forum-home-container">
-            <div className="forum-grid">
-                {isAdmin && (
-                    <div className="squircle-wrapper">
-                        <div className="forum-squircle add-forum-btn" onClick={() => setShowModal(true)}>
-                            <span className="add-text">Add</span>
+            <div className="forum-main-content">
+                <div className="forum-grid">
+                    {isAdmin && (
+                        <div className="squircle-wrapper">
+                            <div className="forum-squircle add-forum-btn" onClick={() => setShowModal(true)}>
+                                <span className="add-text">Add</span>
+                            </div>
                         </div>
-                    </div>
-                )}
-                {categories.map(cat => (
-                    <div key={cat.id} className="squircle-wrapper">
-                        <Link to={`/forums/category/${cat.id}`} className="forum-squircle">
-                            <span className="cat-name">{cat.categoryName}</span>
-                        </Link>
-                        {isAdmin && (
-                            <button className="del-cat-btn" onClick={(e) => handleDeleteCategory(cat.id, e)}>×</button>
-                        )}
-                    </div>
-                ))}
+                    )}
+                    {categories.map(cat => (
+                        <div key={cat.id} className="squircle-wrapper">
+                            <Link to={`/forum/category/${cat.id}`} className="forum-squircle">
+                                <span className="cat-name">{cat.categoryName}</span>
+                            </Link>
+                            {isAdmin && (
+                                <button className="del-cat-btn"
+                                        onClick={(e) => handleDeleteCategory(cat.id, e)}>×</button>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="forum-sidebar">
+                <BulletinBoard
+                    title="New forum"
+                    fetchUrl="/forums/posts/latest"
+                    linkPrefix="/forum/post"
+                    className="forum-home-board"
+                />
             </div>
 
             <AdminModal isOpen={showModal} title="Nieuwe Categorie">
@@ -74,11 +91,13 @@ function ForumHome({ userRole }) {
                     <input
                         value={newCategoryName}
                         onChange={(e) => setNewCategoryName(e.target.value)}
-                        placeholder="Naam van het forum..."
+                        placeholder="Categorie naam"
                         required
+                        autoFocus
                     />
                     <div className="modal-actions">
-                        <button type="button" className="cancel-btn" onClick={() => setShowModal(false)}>Annuleren</button>
+                        <button type="button" className="cancel-btn" onClick={() => setShowModal(false)}>Annuleren
+                        </button>
                         <button type="submit" className="submit-btn">Aanmaken</button>
                     </div>
                 </form>

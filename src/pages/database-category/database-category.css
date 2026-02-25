@@ -53,7 +53,6 @@
     font-size: 1.1rem;
     padding: 20px;
     text-align: center;
-    flex-shrink: 0;
 }
 
 .category-item-card:hover {
@@ -63,11 +62,6 @@
 .pillar-wrapper {
     position: relative;
     display: flex;
-}
-
-.add-page-card {
-    cursor: pointer;
-    background-color: #000000;
 }
 
 .add-text:hover {
@@ -90,69 +84,19 @@
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.admin-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
 .admin-modal-content {
-    background-color: #111111;
-    border: 2px solid #D39D61;
-    border-radius: 40px;
-    width: 90%;
     max-width: 700px;
     max-height: 85vh;
-    padding: 40px;
-    overflow-y: auto;
-    scrollbar-width: none;
 }
 
 .admin-modal-content::-webkit-scrollbar {
     display: none;
 }
 
-.admin-modal-content h2 {
-    color: #D39D61;
-    margin-bottom: 25px;
-    text-align: center;
-    font-size: 1.8rem;
-}
-
 .admin-modal-content form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-.admin-modal-content input,
-.admin-modal-content textarea {
-    background-color: #000000;
-    border: 1px solid #333333;
-    border-radius: 40px;
-    padding: 12px 20px;
-    color: white;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-.admin-modal-content input:focus,
-.admin-modal-content textarea:focus {
-    border-color: #D39D61;
-    outline: none;
-}
-
-.admin-modal-content textarea {
-    min-height: 80px;
-    resize: vertical;
 }
 
 .modal-sections {
@@ -168,14 +112,11 @@
     flex-direction: column;
     gap: 10px;
     padding: 10px;
-    border-radius: 40px;
 }
 
-.admin-modal-content input[type="file"] {
-    background: none;
-    cursor: pointer;
-    padding: 20px;
-    text-align: center;
+.admin-modal-content textarea {
+    min-height: 80px;
+    resize: vertical;
 }
 
 .modal-actions {
@@ -183,33 +124,4 @@
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
-}
-
-.cancel-btn,
-.submit-btn {
-    color: black;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 20px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.submit-btn {
-    background-color: #78BB93;
-}
-
-.cancel-btn {
-    background-color: #D39D61;
-}
-
-.submit-btn:hover {
-    background-color: #D39D61;
-    color: #FFFFFF;
-}
-
-.cancel-btn:hover {
-    background-color: #000000;
-    color: #FFFFFF;
 }

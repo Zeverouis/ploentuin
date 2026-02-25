@@ -14,24 +14,18 @@ function Home() {
                 <div className="register-button">
                     <Button label="Registreer" to="/register" variant="secondary-register" />
                 </div>
-
-                <div className="screenshot-buttons">
-                    <Button label="Backgroundimage" variant="tertiary" />
-                    <Button label="Backgroundimage" variant="tertiary" />
-                    <Button label="Backgroundimage" variant="tertiary" />
-                </div>
             </div>
 
             <div className="bulletin-boards">
                 <BulletinBoard
                     title="Laatste Forums"
                     fetchUrl="/forums/posts/latest"
-                    linkPrefix="/forum/posts"
+                    linkPrefix="/forum/post"
                 />
                 <BulletinBoard
                     title="Nieuwe Planten"
                     fetchUrl="/info/pages/latest"
-                    linkPrefix="/database"
+                    linkPrefix="/database/page"
                 />
             </div>
         </>
