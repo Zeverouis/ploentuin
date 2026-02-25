@@ -1,0 +1,60 @@
+.button {
+    display: flex;
+    border-radius: 40px;
+    width: 240px;
+    height: 100px;
+    background-color: #000;
+    color: #78BB93;
+    cursor: pointer;
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    text-align: center;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 220px;
+    min-width: 60px;
+}
+
+.button:hover {
+    text-decoration: none;
+    background-color: #D39D61;
+    transition: background-color 0.4s ease;
+    color: #000000;
+}
+
+.button:active {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.button-primary {
+    box-shadow: 0 0 10px #D39D61, 0 0 5px #D39D61;
+    border: 1px solid #D39D61;
+    width: 220px;
+    height: 72px;
+}
+
+.button-secondary {
+    box-shadow: none;
+}
+
+.button-secondary-register {
+    box-shadow: none;
+    width: 220px;
+    height: 72px;
+    font-size: clamp(1rem, 2vw, 2.5rem);
+    flex: 0 0 auto;
+}
+
+.button-tertiary {
+    box-shadow: none;
+    height: clamp(1rem, 25vw, 440px);
+    width: clamp(1rem, 13vw, 240px);
+    flex: 0 0 auto;
+}
+
+.button-quaternary {
+    box-shadow: none;
+    max-height: 140px;
+    max-width: 200px;
+}

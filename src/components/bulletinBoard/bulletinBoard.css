@@ -1,0 +1,43 @@
+.bulletin-board {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: 240px;
+    width: 220px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding: 1rem;
+    color: #78BB93;
+    overflow-y: auto;
+}
+
+.bulletin-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.bulletin-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bulletin-links li a {
+    color: #D39D61;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.bulletin-links li a:hover {
+    color: white;
+}
+
+.loading-text {
+    text-align: center;
+    color: #D39D61;
+}
