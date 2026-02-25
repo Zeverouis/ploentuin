@@ -1,0 +1,130 @@
+.header-wrapper {
+    background-color: #1B1B1B;
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header-top {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    max-height: 242px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header-top-spacer {
+    width: 220px;
+    visibility: hidden;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    color: #D39D61;
+}
+
+.header-title-name {
+    font-size: 4rem;
+}
+
+.header-title-logo {
+    width: 150px;
+    height: auto;
+}
+
+.header-loginStatus {
+    flex-shrink: 0;
+}
+
+.avatar-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header-avatar {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.header-dropdown {
+    position: absolute;
+    right: 0;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 10;
+}
+
+.header-dropdown a,
+.header-dropdown button {
+    padding: 12px 15px;
+    color: #D39D61;
+    text-decoration: none;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.header-dropdown a:hover,
+.header-dropdown button:hover {
+    color: #78BB93;
+}
+
+.header-spacer {
+    height: 60px;
+}
+
+.header-bottom {
+    display: flex;
+    flex-direction: row;
+    padding-left: 60px;
+    justify-content: flex-start;
+    gap: clamp(10px, 5vw, 130px);
+    max-height: 100px;
+    align-items: center;
+}
+
+.navbar-toggle-wrapper {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.navbar-icon {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px #D39D61) drop-shadow(0 4px 2px #D39D61);
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: clamp(10px, 9vw, 130px);
+    overflow: hidden;
+    padding: 2rem;
+    align-items: center;
+    flex-shrink: 1;
+}
