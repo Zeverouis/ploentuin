@@ -5,10 +5,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Layout({
-                    loggedIn,
-                    setLoggedIn,
-                    currentUsername,
-                    currentUserAvatar,
                     navbarOpen,
                     setNavbarOpen
                 }) {
@@ -56,10 +52,6 @@ function Layout({
             <Header
                 websiteName="Ploentuin"
                 logoUrl="/logo.svg"
-                loggedIn={loggedIn}
-                setLoggedIn={setLoggedIn}
-                currentUsername={currentUsername}
-                currentUserAvatar={currentUserAvatar}
                 navbarToggle={!isPlannerPage}
                 navbarIconUrl
                 onToggleNavbar={() => setNavbarOpen(!navbarOpen)}

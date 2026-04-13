@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import './database-category.css';
 import AdminModal from "../../components/adminModal/admin-modal.jsx";
+import { AuthContext} from "../../context/auth-context.jsx";
 
-function DatabaseCategory({ userRole }) {
+function DatabaseCategory() {
+    const { token, userRole } = useContext(AuthContext);
     const { id } = useParams();
     const [pages, setPages] = useState([]);
     const [categoryName, setCategoryName] = useState("");
@@ -51,7 +53,7 @@ function DatabaseCategory({ userRole }) {
 
         try {
             await axios.delete(`http://localhost:8080/info/pages/${pageId}`, {
-                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+                headers: { Authorization: `Bearer ${token}` }
             });
             fetchData();
         } catch (err) {
@@ -80,7 +82,7 @@ function DatabaseCategory({ userRole }) {
         try {
             await axios.post('http://localhost:8080/info/pages', data, {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data'
                 }
             });

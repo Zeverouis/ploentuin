@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import { TopicIcons } from "../../assets/Forum/topic/topic-icons.jsx";
 import './profile.css';
 import AdminModal from "../../components/adminModal/admin-modal.jsx";
+import { AuthContext } from "../../context/auth-context.jsx";
 
-const ProfilePage = ({ token, currentUsername, currentUserEmail }) => {
+const ProfilePage = () => {
     const { username } = useParams();
+    const { token, currentUsername, currentUserEmail } = useContext(AuthContext);
     const [profileData, setProfileData] = useState(null);
     const [activeModal, setActiveModal] = useState(null);
     const [loading, setLoading] = useState(true);

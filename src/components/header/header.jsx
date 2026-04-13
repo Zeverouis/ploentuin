@@ -1,20 +1,18 @@
 import './header.css'
 import Button from "../button/button.jsx";
 import {useLocation, Link} from "react-router-dom";
-import {useState} from "react";
+import {useState, useContext} from "react";
 import { HeaderIcons } from "../../assets/header/header-icons.jsx";
+import { AuthContext } from "../../context/auth-context.jsx";
 
 function Header ({websiteName,
-                     loggedIn,
-                     setLoggedIn,
-                     currentUsername,
-                     currentUserAvatar,
                      navbarToggle = false,
                      onToggleNavbar
                  }) {
     const location = useLocation();
     const path = location.pathname;
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const { loggedIn, currentUsername, currentUserAvatar, logout } = useContext(AuthContext);
 
     const renderDynamicButtons = () => {
         if (path.startsWith('/planner')) {
@@ -81,8 +79,7 @@ function Header ({websiteName,
                                     <div className="header-dropdown">
                                         <Link to={`/profile/${currentUsername}`} onClick={() => setDropdownOpen(false)}>Profiel</Link>
                                         <button onClick={() => {
-                                            localStorage.removeItem('token');
-                                            setLoggedIn(false);
+                                            logout();
                                             setDropdownOpen(false);
                                         }}>Logout</button>
                                     </div>
