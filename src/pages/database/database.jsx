@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BulletinBoard from '../../components/BulletinBoard/BulletinBoard';
 import './database.css';
 import { categoryImages } from "../../assets/database/categories/category-images.jsx";
 import AdminModal from "../../components/adminModal/admin-modal.jsx";
+import { AuthContext} from "../../context/auth-context.jsx";
 
-function Database({ userRole }) {
+function Database() {
+    const { userRole, token } = useContext(AuthContext);
     const [categories, setCategories] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [newCatName, setNewCatName] = useState("");
@@ -30,7 +32,7 @@ function Database({ userRole }) {
         try {
             await axios.post('http://localhost:8080/info/categories',
                 { categoryName: newCatName },
-                { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
+                { headers: { Authorization: `Bearer ${token}` } }
             );
             setNewCatName("");
             setShowModal(false);
@@ -46,7 +48,7 @@ function Database({ userRole }) {
 
         try {
             await axios.delete(`http://localhost:8080/info/categories/${id}`, {
-                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+                headers: { Authorization: `Bearer ${token}` }
             });
             fetchCategories();
         } catch (err) {

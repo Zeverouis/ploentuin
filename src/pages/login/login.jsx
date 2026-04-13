@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './login.css';
 import Button from "../../components/button/button.jsx";
+import { AuthContext } from "../../context/auth-context.jsx";
 
-function Login({ setLoggedIn, setUserRole, setCurrentUserId, setIsBanned }) {
+function Login() {
     const [formData, setFormData] = useState({ username: '', password: '' });
     const navigate = useNavigate();
+
+    const { setLoggedIn } = useContext(AuthContext);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,21 +30,12 @@ function Login({ setLoggedIn, setUserRole, setCurrentUserId, setIsBanned }) {
             if (response.ok) {
                 localStorage.setItem('token', result.data);
 
-                const userResponse = await fetch('http://localhost:8080/users/me', {
-                    headers: { 'Authorization': `Bearer ${result.data}` }
-                });
-                const userResult = await userResponse.json();
+                setLoggedIn(true);
 
-                if (userResponse.ok) {
-                    setLoggedIn(true);
-                    setUserRole(userResult.data.role);
-                    setCurrentUserId(userResult.data.id);
-                    setIsBanned(userResult.data.banned);
+                toast.success(result.message || "Login succesvol!");
+                navigate('/');
 
-                    toast.success(result.message || "Login succesvol!");
-                    navigate('/');
-                }
-            } else {
+                } else {
                 toast.error(result.message || "Login mislukt. Check je gegevens.");
             }
         } catch (error) {

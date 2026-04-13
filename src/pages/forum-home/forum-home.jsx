@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './forum-home.css';
 import AdminModal from "../../components/adminModal/admin-modal.jsx";
 import BulletinBoard from "../../components/bulletinBoard/bulletinBoard.jsx";
+import { AuthContext} from "../../context/auth-context.jsx";
 
-function ForumHome({ userRole }) {
+function ForumHome() {
+    const { token, userRole } = useContext(AuthContext);
     const [categories, setCategories] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [newCategoryName, setNewCategoryName] = useState("");
@@ -29,7 +31,7 @@ function ForumHome({ userRole }) {
         try {
             await axios.post('http://localhost:8080/forums/categories',
                 {categoryName: newCategoryName},
-                {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}
+                {headers: {Authorization: `Bearer ${token}`}}
             );
             setNewCategoryName("");
             setShowModal(false);
@@ -44,7 +46,7 @@ function ForumHome({ userRole }) {
         if (!window.confirm("Alle posts in deze categorie worden ook verwijderd. Doorgaan?")) return;
         try {
             await axios.delete(`http://localhost:8080/forums/categories/${id}`, {
-                headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+                headers: {Authorization: `Bearer ${token}`}
             });
             fetchCategories();
         } catch (err) {

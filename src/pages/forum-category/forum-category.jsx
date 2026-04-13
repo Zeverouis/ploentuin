@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import './forum-category.css';
 import AdminModal from "../../components/adminModal/admin-modal.jsx";
+import { AuthContext} from "../../context/auth-context.jsx";
 
-function ForumCategory({ userRole, isBanned }) {
+function ForumCategory() {
+    const { token, userRole, isBanned } = useContext(AuthContext);
     const { id } = useParams();
     const [posts, setPosts] = useState([]);
     const [category, setCategory] = useState(null);
     const [showModal, setShowModal] = useState(false);
-    const token = localStorage.getItem('token');
 
     const [newPost, setNewPost] = useState({
         title: '',
