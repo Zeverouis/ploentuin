@@ -1,0 +1,43 @@
+.verify-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.verify-form {
+    background-color: #000000;
+    padding: 3rem;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.verify-form h2 {
+    color: #D39D61;
+    margin: 0;
+}
+
+.verify-form p {
+    color: #888888;
+    line-height: 1.5;
+}
+
+.back-button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.back-button:hover {
+    background-color: #D39D61;
+}

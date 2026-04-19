@@ -13,6 +13,7 @@ import ForumCategory from "./pages/forum-category/forum-category.jsx";
 import ForumTopic from "./pages/forum-topic/forum-topic.jsx";
 import Planner from "./pages/planner/planner.jsx";
 import Profile from "./pages/profile/profile.jsx";
+import VerifyEmail from "./pages/verify-email/verify-email.jsx";
 
 function App() {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -37,6 +38,7 @@ function App() {
                     <Route path="/forum/post/:id" element={<ForumTopic/>} />
                     <Route path="/planner/:id?" element={<Planner />} />
                     <Route path="/profile/:username" element={ <Profile/>} />
+                    <Route path="/verify" element={<VerifyEmail />} />
                 </Route>
             </Routes>
 
