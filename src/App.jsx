@@ -14,6 +14,8 @@ import ForumTopic from "./pages/forum-topic/forum-topic.jsx";
 import Planner from "./pages/planner/planner.jsx";
 import Profile from "./pages/profile/profile.jsx";
 import VerifyEmail from "./pages/verify-email/verify-email.jsx";
+import ForgotPassword from "./pages/forgot-password/forgot-password.jsx";
+import ResetPassword from "./pages/reset-password/reset-password.jsx";
 
 function App() {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -39,6 +41,8 @@ function App() {
                     <Route path="/planner/:id?" element={<Planner />} />
                     <Route path="/profile/:username" element={ <Profile/>} />
                     <Route path="/verify" element={<VerifyEmail />} />
+                    <Route path="/forgotpassword" element={<ForgotPassword/>} />
+                    <Route path="/reset" element={<ResetPassword/>} />
                 </Route>
             </Routes>
 
@@ -49,7 +53,7 @@ function App() {
                 pauseOnHover={false}
             />
         </>
-    )
+    );
 }
 
 export default App;
