@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './login.css';
 import Button from "../../components/button/button.jsx";
@@ -72,6 +72,10 @@ function Login() {
                 </div>
                 <div className="login-actions">
                     <Button label="Inloggen" type="submit" variant="primary" />
+                </div>
+
+                <div className="login-footer">
+                    <Link to="/forgotpassword">Wachtwoord vergeten?</Link>
                 </div>
             </form>
         </div>
