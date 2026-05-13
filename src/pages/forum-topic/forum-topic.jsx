@@ -199,11 +199,11 @@ function ForumTopic() {
         </div>
     );
 
-    if (loading) return <div className="forum-topic-page"><h1>Loading...</h1></div>;
-    if (!post) return <div className="forum-topic-page"><h1>Post niet gevonden.</h1></div>;
+    if (loading) return <div className="forum-topics-page"><h1>Loading...</h1></div>;
+    if (!post) return <div className="forum-topics-page"><h1>Post niet gevonden.</h1></div>;
 
     return (
-        <div className="forum-topic-page" onClick={() => setActiveDropdown(null)}>
+        <div className="forum-topics-page" onClick={() => setActiveDropdown(null)}>
             <div className="forum-topic-container">
                 <div className="main-post">
                     <div className="post-actions">

@@ -119,7 +119,7 @@ function DatabaseCategory() {
                 {pages.map(page => (
                     <div key={page.id} className="pillar-wrapper">
                         <Link to={`/database/page/${page.id}`} className="category-item-card">{page.title}</Link>
-                        {isAdmin && <button className="delete-x" onClick={(e) => handleDeletePage(page.id, e)}>×</button>}
+                        {isAdmin && <button className="delete" onClick={(e) => handleDeletePage(page.id, e)}>×</button>}
                     </div>
                 ))}
             </div>

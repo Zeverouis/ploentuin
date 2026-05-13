@@ -120,7 +120,7 @@ const ProfilePage = () => {
                     {isOwner && (
                         <div className="owner-settings">
                             <button className="text-action-link" onClick={() => setActiveModal('password')}>
-                                Change password <img src={TopicIcons.editPencil} alt="edit" />
+                                Verander wachtwoord <img src={TopicIcons.editPencil} alt="edit" />
                             </button>
                             <button className="text-action-link" onClick={() => setActiveModal('email')}>
                                 {currentUserEmail} <img src={TopicIcons.editPencil} alt="edit" />

@@ -1,13 +1,3 @@
-.forum-topic-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 10px 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 .forum-topic-container {
     display: flex;
     flex-direction: column;
@@ -18,7 +8,7 @@
 }
 
 .main-post {
-    background-color: #000000;
+    background-color: var(--black);
     padding: 20px 80px;
     border-radius: 40px;
     position: relative;
@@ -29,7 +19,7 @@
 }
 
 .post-title {
-    color: #D39D61;
+    color: var(--gold);
     font-size: 2.5rem;
     margin-bottom: 25px;
     font-weight: bold;
@@ -51,7 +41,7 @@
 }
 
 .comment-bar {
-    background-color: #000000;
+    background-color: var(--black);
     padding: 30px 60px;
     border-radius: 35px;
     position: relative;
@@ -71,7 +61,7 @@
 }
 
 .author-tag {
-    color: #78BB93;
+    color: var(--green);
     font-weight: bold;
     font-size: 0.95rem;
 }
@@ -155,8 +145,8 @@
 
 .add-url-trigger {
     background: transparent;
-    border: 1px solid #D39D61;
-    color: #D39D61;
+    border: 1px solid var(--gold);
+    color: var(--gold);
     padding: 12px;
     border-radius: 40px;
     cursor: pointer;
@@ -172,7 +162,7 @@
 }
 
 .banned-alert {
-    color: #D39D61;
+    color: var(--gold);
     font-weight: bold;
 }
 
@@ -191,15 +181,15 @@
     width: 35px;
     height: 35px;
     cursor: pointer;
-    filter: drop-shadow(0 0 8px #D39D61) drop-shadow(0 0 2px #D39D61);
+    filter: drop-shadow(0 0 8px var(--gold)) drop-shadow(0 0 2px var(--gold));
 }
 
 .role-dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #000000;
-    border: 1px solid #D39D61;
+    background-color: var(--black);
+    border: 1px solid var(--gold);
     z-index: 10;
     min-width: 120px;
     border-radius: 15px;
@@ -210,12 +200,12 @@
     padding: 8px;
     background: none;
     border: none;
-    color: #D39D61;
+    color: var(--gold);
     cursor: pointer;
     text-align: left;
     font-size: 0.8rem;
 }
 
 .role-dropdown button:hover {
-    color: #78BB93;
+    color: var(--green);
 }

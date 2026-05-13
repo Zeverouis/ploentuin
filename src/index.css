@@ -9,7 +9,6 @@
 body {
   font-family: "Roboto Mono", "Roboto", monospace, sans-serif;
   margin: 0;
-  display: flex;
   flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
@@ -18,13 +17,13 @@ body {
 h2{
   text-align: center;
   font-size: 2.5rem;
-  color: #D39D61;
+  color: var(--gold);
 }
 
 p{
   text-align: center;
   font-size: 2rem;
-  color: #D39D61;
+  color: var(--gold);
 }
 
 :root {
@@ -32,5 +31,107 @@ p{
   line-height: 1.5;
   font-weight: 400;
   text-align: center;
-  background-color: #242424;
+  background-color: var(--bg-grey);
+  --gold: #D39D61;
+  --green: #78BB93;
+  --black: #000000;
+  --bg-grey: #242424;
+}
+
+/*Forms and 'form' containers*/
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.auth-form {
+  background-color: var(--black);
+  padding: 3rem;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input-group label {
+  color: var(--gold);
+}
+
+.input-group input {
+  width: 100%;
+  height: 50px;
+  background-color: #888;
+  border: none;
+  border-radius: 8px;
+  padding: 0 1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.input-group input:hover {
+  outline: 1px solid var(--gold);
+  background-color: var(--green);
+}
+
+.auth-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.auth-form h2 {
+  color: var(--gold);
+  text-align: center;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.auth-form p {
+  color: #888888;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/*Forums*/
+
+.forum-topics-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*Delete 'X' button for forum/database*/
+
+.delete {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }

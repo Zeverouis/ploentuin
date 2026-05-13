@@ -71,7 +71,7 @@ function ForumHome() {
                                 <span className="cat-name">{cat.categoryName}</span>
                             </Link>
                             {isAdmin && (
-                                <button className="del-cat-btn"
+                                <button className="delete"
                                         onClick={(e) => handleDeleteCategory(cat.id, e)}>×</button>
                             )}
                         </div>

@@ -4,7 +4,7 @@
     width: 240px;
     height: 100px;
     background-color: #000;
-    color: #78BB93;
+    color: var(--green);
     cursor: pointer;
     font-size: clamp(1rem, 3vw, 2.5rem);
     text-align: center;
@@ -17,9 +17,9 @@
 
 .button:hover {
     text-decoration: none;
-    background-color: #D39D61;
+    background-color: var(--gold);
     transition: background-color 0.4s ease;
-    color: #000000;
+    color: var(--black);
 }
 
 .button:active {
@@ -28,8 +28,8 @@
 }
 
 .button-primary {
-    box-shadow: 0 0 10px #D39D61, 0 0 5px #D39D61;
-    border: 1px solid #D39D61;
+    box-shadow: 0 0 10px var(--gold), 0 0 5px var(--gold);
+    border: 1px solid var(--gold);
     width: 220px;
     height: 72px;
 }
