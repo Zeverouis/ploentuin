@@ -31,7 +31,7 @@
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    color: #D39D61;
+    color: var(--gold);
 }
 
 .header-title-name {
@@ -73,7 +73,7 @@
 .header-dropdown a,
 .header-dropdown button {
     padding: 12px 15px;
-    color: #D39D61;
+    color: var(--gold);
     text-decoration: none;
     background: none;
     border: none;
@@ -85,7 +85,7 @@
 
 .header-dropdown a:hover,
 .header-dropdown button:hover {
-    color: #78BB93;
+    color: var(--green);
 }
 
 .header-spacer {
@@ -116,7 +116,7 @@
     height: 100%;
     cursor: pointer;
     object-fit: contain;
-    filter: drop-shadow(0 2px 8px #D39D61) drop-shadow(0 4px 2px #D39D61);
+    filter: drop-shadow(0 2px 8px var(--gold)) drop-shadow(0 4px 2px var(--gold));
 }
 
 .action-buttons {

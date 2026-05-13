@@ -36,8 +36,8 @@ function ResetPassword() {
     };
 
     return (
-        <div className="reset-container">
-            <form onSubmit={handleSubmit} className="reset-form">
+        <div className="auth-container">
+            <form onSubmit={handleSubmit} className="auth-form">
                 <h2>Nieuw Wachtwoord</h2>
 
                 <div className="input-group">
@@ -62,7 +62,7 @@ function ResetPassword() {
                     />
                 </div>
 
-                <div className="reset-actions">
+                <div className="auth-actions">
                     <Button label="Opslaan" type="submit" variant="primary" />
                 </div>
             </form>

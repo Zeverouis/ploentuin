@@ -118,7 +118,7 @@ function ForumCategory() {
 
                             {isAuthorizedToDelete && (
                                 <button
-                                    className="delete-x"
+                                    className="delete"
                                     onClick={(e) => handleDelete(post.id, e)}
                                 >
                                     ×

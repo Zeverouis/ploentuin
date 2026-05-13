@@ -51,11 +51,11 @@
 
 .pencil-btn-only img {
     width: 30px;
-    filter: drop-shadow(0 0 8px #D39D61) drop-shadow(0 0 2px #D39D61);
+    filter: drop-shadow(0 0 8px var(--gold)) drop-shadow(0 0 2px var(--gold));
 }
 
 .profile-username-display {
-    color: #D39D61;
+    color: var(--gold);
     font-size: 1.8rem;
     margin: 0 0 20px 0;
 }
@@ -75,7 +75,7 @@
 
 .text-action-link img {
     width: 30px;
-    filter: drop-shadow(0 0 8px #D39D61) drop-shadow(0 0 2px #D39D61);
+    filter: drop-shadow(0 0 8px var(--gold)) drop-shadow(0 0 2px var(--gold));
 }
 
 .text-action-link:hover img {
@@ -96,7 +96,7 @@
 }
 
 .planner-card-label {
-    color: #78BB93;
+    color: var(--green);
     font-size: 1.1rem;
     font-weight: 500;
 }
@@ -106,11 +106,11 @@
 }
 
 .planner-card:hover .planner-card-label {
-    color: #D39D61;
+    color: var(--gold);
 }
 
 .planners-display-area {
-    background: #000000;
+    background: var(--black);
     border-radius: 40px;
     padding: 20px;
     min-height: 80px;
@@ -119,14 +119,14 @@
 
 .section-header {
     text-align: center;
-    color: #D39D61;
+    color: var(--gold);
     margin-bottom: 20px;
 }
 
 .about-me-card {
     position: relative;
     margin-top: 40px;
-    background: #000000;
+    background: var(--black);
     border-radius: 40px;
     padding: 20px;
     display: flex;
@@ -170,5 +170,5 @@
 
 .pencil-btn-about-top img {
     width: 35px;
-    filter: drop-shadow(0 0 8px #D39D61) drop-shadow(0 0 2px #D39D61);
+    filter: drop-shadow(0 0 8px var(--gold)) drop-shadow(0 0 2px var(--gold));
 }

@@ -7,7 +7,7 @@
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
     padding: 1rem;
-    color: #78BB93;
+    color: var(--green);
     overflow-y: auto;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .bulletin-links li a {
-    color: #D39D61;
+    color: var(--gold);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.2s;
@@ -39,5 +39,5 @@
 
 .loading-text {
     text-align: center;
-    color: #D39D61;
+    color: var(--gold);
 }

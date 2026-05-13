@@ -14,7 +14,7 @@
     text-align: center;
     font-size: 4rem;
     margin-bottom: 40px;
-    color: #78BB93;
+    color: var(--green);
 }
 
 .entity-content-layout {
@@ -47,12 +47,12 @@
     margin-bottom: 4rem;
     text-align: left;
     width: 100%;
-    color: #D39D61;
+    color: var(--gold);
 }
 
 .info-section-title {
     font-size: 1.3rem;
-    color: #78BB93;
+    color: var(--green);
     text-align: left;
     margin-bottom: 10px;
 }

@@ -92,7 +92,7 @@ function Database() {
                             {isAdmin && (
                                 <button
                                     onClick={(e) => handleDelete(cat.id, e)}
-                                    className="delete-x"
+                                    className="delete"
                                     title="Delete Category"
                                 >
                                     ×

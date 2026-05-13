@@ -38,8 +38,8 @@ function VerifyEmail() {
     }, [token, navigate]);
 
     return (
-        <div className="verify-container">
-            <div className="verify-form">
+        <div className="auth-container">
+            <div className="auth-form">
                 {status === 'loading' && (
                     <>
                         <h2>Account Verifiëren</h2>
@@ -50,14 +50,14 @@ function VerifyEmail() {
 
                 {status === 'success' && (
                     <>
-                        <h2 style={{ color: '#78BB93' }}>Gelukt! 🎉</h2>
+                        <h2 style={{ color: 'var(--green)' }}>Gelukt! 🎉</h2>
                         <p>Je email is bevestigd. Je wordt nu doorgestuurd naar de login pagina.</p>
                     </>
                 )}
 
                 {status === 'error' && (
                     <>
-                        <h2 style={{ color: '#D39D61' }}>Oeps!</h2>
+                        <h2 style={{ color: 'var(--gold)' }}>Oeps!</h2>
                         <p>Deze link is niet meer geldig of de server is offline.</p>
                         <button className="back-button" onClick={() => navigate('/')}>
                             Terug naar Home

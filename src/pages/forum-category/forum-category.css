@@ -1,15 +1,5 @@
-.forum-topics-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 10px 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 .forum-topics-header {
-    background-color: #000000;
+    background-color: var(--black);
     width: 100%;
     max-width: 600px;
     height: 120px;
@@ -22,7 +12,7 @@
 }
 
 .forum-topics-header h1 {
-    color: #78BB93;
+    color: var(--green);
     font-size: 2.5rem;
     margin: 0;
 }
@@ -50,7 +40,7 @@
 }
 
 .topic-card {
-    background-color: #000000;
+    background-color: var(--black);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,18 +56,18 @@
 }
 
 .topic-card:hover {
-    border-color: #D39D61;
+    border-color: var(--gold);
 }
 
 .topic-title {
-    color: #D39D61;
+    color: var(--gold);
     font-size: 1.8rem;
     font-weight: 800;
     margin-bottom: 10px;
 }
 
 .topic-author {
-    color: #78BB93;
+    color: var(--green);
     font-size: 1.1rem;
 }
 
@@ -87,35 +77,19 @@
 }
 
 .add-topic-card:hover {
-    border-color: #78BB93;
+    border-color: var(--green);
 }
 
 .add-text {
-    color: #78BB93;
+    color: var(--green);
     font-size: 1.5rem;
     font-weight: 900;
-}
-
-.delete-x {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    color: #FFFFFF;
-    font-size: 32px;
-    font-weight: 300;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 10;
-    padding: 0;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
 .add-topic-card.disabled-card {
     cursor: not-allowed;
     opacity: 0.5;
-    background-color: #000000;
+    background-color: var(--black);
 }
 
 .add-topic-card.disabled-card:hover {

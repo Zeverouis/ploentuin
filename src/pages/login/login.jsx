@@ -45,9 +45,8 @@ function Login() {
     };
 
     return (
-        <div className="login-container">
-            <form onSubmit={handleSubmit} className="login-form">
-                <h2>Login</h2>
+        <div className="auth-container">
+            <form onSubmit={handleSubmit} className="auth-form">
                 <div className="input-group">
                     <label>Gebruikersnaam</label>
                     <input
@@ -70,7 +69,7 @@ function Login() {
                         required
                     />
                 </div>
-                <div className="login-actions">
+                <div className="auth-actions">
                     <Button label="Inloggen" type="submit" variant="primary" />
                 </div>
 

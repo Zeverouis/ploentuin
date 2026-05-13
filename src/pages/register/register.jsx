@@ -48,8 +48,8 @@ function Register() {
     };
 
     return (
-        <div className="register-container">
-            <form className="register-form" onSubmit={handleSubmit}>
+        <div className="auth-container">
+            <form className="auth-form" onSubmit={handleSubmit}>
                 <div className="input-group">
                     <label>Gebruikersnaam</label>
                     <input
@@ -80,7 +80,7 @@ function Register() {
                     />
                 </div>
 
-                <div className="register-actions">
+                <div className="auth-actions">
                     <Button label="Registreren" type="submit" variant="primary" />
                 </div>
             </form>
